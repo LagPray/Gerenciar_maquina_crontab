@@ -32,8 +32,9 @@ Primeiramente, vamos  entender a estruturação que as tarefas devem seguir para
 Comecemos com o que cada parte dele significa individualmente e suas variações e possibilidades. Vamos começar com a primeira parte.
 `00 20 * * 1-5` <br>
 
-O sistema vai antes de tudo, procurar alguma tarefa dentro do crontab que se encaixe naquela data, analizando na ordem **minuto** -> **hora** -> **dia do mês** -> **mês** -> **dia da semana**. Sempre que quisermos dizer _todos/tudo_ usamos o simbolo __*__.
+O sistema vai antes de tudo, procurar alguma tarefa dentro do crontab que se encaixe naquela data, analizando na ordem **minuto** -> **hora** -> **dia do mês** -> **mês** -> **dia da semana**. Sempre que quisermos dizer _todos/tudo_ usamos o simbolo __*__. <br>
 O minuto e a hora são as duas primeiras coisas ao declarar (`00 20`), depois declaramos os dias do mês que queremos rodar aquele comando(* - todos os dias do mês), em seguida os meses(* - todos os meses) e o dia da semana, que serão contabilizados de 0 a 6 onde 0 representa _domingo_(1-5 - nesse caso, de segunda a sexta). <br>
+
 Além do __*__, tambem temos outro operadores com funções distintas: <br>
 
 __(,)__: Lista valores especificos. Por exemplo: `00 20 5,25 * 1-5` Aqui a tarefa será executada as 20:00 do dia 5 e 25 durante dos os meses de segunda a sexta. É possivel usar __(,)__ em todos os campos e quantas vezes quiser para definir intervalos específicos para cada tarefa. <br>
